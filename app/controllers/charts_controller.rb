@@ -1,15 +1,17 @@
 class ChartsController < ApplicationController
-  before_action :set_chart, except: [:index, :new, :create]
+  before_action :set_chart, only: [:show, :edit, :update, :destroy]
 
   def index
     @charts = Chart.all
   end
 
   def show
+   @songs = @chart.songs.all
   end
 
   def new
     @chart = Chart.new
+    render :new
   end
 
   def create
@@ -35,14 +37,15 @@ class ChartsController < ApplicationController
   def destroy
     @person.destroy
     redirect_to charts_path
-end
+  end
 
 private 
   def chart_params
-    params.require(:name)
+    params.require(:chart).permit(:name)
   end
 
   def set_chart
     @chart = Chart.find(params[:id])
   end
+
 end
