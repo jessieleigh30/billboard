@@ -1,10 +1,11 @@
 <h1>Top Music Charts <h1>
 
-<%=link_to "New Chart", new_chart_path, class:"btn" %>
+<h4><%= link_to "Artist", artists_path, class:"btn black"%>
 
 
 <% @charts.each do |chart| %>
-  <h3><%= link_to chart.name, chart %></h3>
-     
-<% end %>
-
+  <h5><%= link_to chart.name, chart_songs_path(chart) %></h5>
+  
+  <% end %>
+  
+  <%=link_to "New Chart", new_chart_path, class:"btn" %>

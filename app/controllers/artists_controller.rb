@@ -6,7 +6,6 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Artist.find(params[:id])
     @songs = @artist.songs
     #loop through that in the show page
   end
@@ -41,9 +40,10 @@ class ArtistsController < ApplicationController
   def destroy
     @artist.destroy
     redirect_to artist_path
+  end
+  private
+  def set_artist
+    @artist = Artist.find(params[:id])
+  end
 end
 
-private
-def set_artist
-  @artist = Artist.find(params[:id])
-end

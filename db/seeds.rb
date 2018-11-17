@@ -1,28 +1,29 @@
-10.times do 
-  Chart.create(
-    name: Faker::Music.genre
+10.times do
+  c = Chart.create(
+      name: Faker::Music.genre
   )
+  10.times do 
+  c.songs.create(
+      title: Faker::Book.title,
+      album: Faker::Music.album
+  )
+  end
 end
 
- 50.times do
-  Artist.create(
-    name: Faker::Music.band
+10.times do
+  artist = Artist.create(
+      name: Faker::Music.band
   )
- end
- 
-  Artist.all.each do 
-    title = Faker::Book.title,
-    album = Faker::Music.album,
-    chart_id = rand(10) + 1
-    artist_id = rand(50) + 1
-    Song.create(
-      title: title,
-      album: album,
-      chart_id: chart_id,
-      artist_id: artist_id
-      )
-    end
-   
+  10.times do
+  artist.songs.create(
+      title: Faker::Book.title,
+      album: Faker::Music.album
+  )
+  end
+end
 
 
- puts "successfully seeded"
+puts "Successfully seeded"
+
+
+

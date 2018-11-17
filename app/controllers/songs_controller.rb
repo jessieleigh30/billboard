@@ -1,13 +1,14 @@
 class SongsController < ApplicationController
 
-  #before action :set_artist, only: [:show, :edit, :update, :destroy]
+  before_action :song_called
+  before_action :set_chart, only: [:show, :edit, :update, :destroy]
 
   def index
-    @charts = Chart.find(params[:chart_id])
-    @songs = @artist.songs.all
+    @songs= @song_called.songs
   end
 
   def show
+    @songs = @chart.songs.all
   end
 
   def new
@@ -34,7 +35,17 @@ class SongsController < ApplicationController
     else 
       render :edit
     end
-  end
+  end 
+
+protected
+  def song_called
+    @song_called ||=
+    if params[:chart_id]
+      Chart.find(params[:chart_id])
+    else params[:artist_id]
+      Artist.find(params[:artist_id])
+    end
+ end
 
     private
 

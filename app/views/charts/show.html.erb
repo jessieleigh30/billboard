@@ -1,7 +1,7 @@
 <h1><%= @chart.name %></h1>
 
-<% @songs.each do |song| %>
-  <h3><%= song.title %></h3>
+<%= @chart.songs.each do |song| %>
+  <h6><%= song.title %></h6>
 <% end %>
 
-<%= link_to "View Songs", chart_songs_path(@chart) %>
+
