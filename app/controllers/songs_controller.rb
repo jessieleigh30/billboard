@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
 
-  before_action :song_called
+  before_action :song_called;
   before_action :set_chart, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -12,7 +12,7 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = @artist.songs.new
+    @song = @chart.songs.new
     render partial: "form"
   end
 
@@ -52,9 +52,13 @@ protected
     def set_artist
       @artist = Artist.find(params[:artist_id])
     end
+    
+    def chart_params
+      params.require(:chart).permit(:name)
+    end
 
     def chart
-      @chart = Chart.find(params[:artist_id])
+      @chart = Chart.find(params[:chart_id])
     end
 end
 
