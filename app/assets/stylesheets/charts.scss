@@ -1,3 +1,50 @@
-// Place all the styles related to the Charts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.charts-container {
+    background-color: teal;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    h1 {
+        margin: 0;
+        color: white;
+    }
+
+    h5 {
+        color: white;
+        transition: 0.3s;
+        padding: 10px;
+        a {
+            color: white;
+        }
+
+        &:hover {
+            background-color: rgba(0,0,0,0.5);
+        }
+    }
+
+    .index-button {
+        background-color: white;
+        padding: 30px;
+        color: black;
+        border: none;
+        outline: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s linear;
+
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+    
+    .chart {
+      background-color: gray;
+      padding: 50px;
+
+    }
+} // everything inside the charts container needs to be inside this container. so for instance the link inside the h5 needs to be nested like so.
