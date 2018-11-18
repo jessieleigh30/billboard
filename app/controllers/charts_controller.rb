@@ -6,7 +6,7 @@ class ChartsController < ApplicationController
   end
 
   def show
-   @songs = @chart.songs.all
+   @songs = @chart.songs
   end
 
   def new
@@ -28,24 +28,28 @@ class ChartsController < ApplicationController
 
   def update
     if @chart.update(chart_params)
-      redirect_to charts_path
+      redirect_to @chart
     else
       render :edit
     end
   end
 
   def destroy
-    @person.destroy
+    @chart.destroy
     redirect_to charts_path
   end
 
 private 
+
+def set_chart
+  @chart = Chart.find(params[:id])
+end
+
   def chart_params
     params.require(:chart).permit(:name)
   end
 
-  def set_chart
-    @chart = Chart.find(params[:id])
-  end
 
 end
+
+

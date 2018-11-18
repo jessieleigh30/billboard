@@ -1,10 +1,13 @@
-<h1>Songs in the Wrong Spot</h1>
+<h1>Chart Songs</h1>
 
 
 
 <%= @songs.each do |song| %>
   <h6><%= song.title %></h6>
 <% end %>
+
+<div />
+<div />
 
 
 <%=link_to "Add New", new_chart_song_path, class:"btn" %>
