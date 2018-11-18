@@ -1,1 +1,32 @@
-@import "materialize";
+.artist_container {
+
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+
+.artists {
+  background-color:#35586C;
+  padding: 25px;
+  width: 250px;
+}
+h1 {
+  margin: 10;
+  color: black;
+}
+
+h5 {
+  color: white;
+  transition: 0.3s;
+  padding: 10px;
+  a {
+      color: white;
+  }
+  &:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+}
+
+}

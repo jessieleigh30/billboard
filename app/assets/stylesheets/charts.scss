@@ -1,5 +1,4 @@
 .charts-container {
-    background-color: teal;
     padding: 100px;
     display: flex;
     flex-direction: column;
@@ -8,7 +7,7 @@
 
     h1 {
         margin: 0;
-        color: white;
+        color: black;
     }
 
     h5 {
@@ -43,8 +42,11 @@
     }
     
     .chart {
-      background-color: gray;
+      background-color: #35586C;
       padding: 50px;
+      width: 300px;
+      
+
 
     }
 } // everything inside the charts container needs to be inside this container. so for instance the link inside the h5 needs to be nested like so.

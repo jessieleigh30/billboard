@@ -1,10 +1,18 @@
+<div class="artist_container">
+
 <h1>Artists</h1>
-<% @artists.each do |artist| %>
-<h5><%=link_to artist.name, artist_path(artist) %></h5>
-<% end %>
+
+<div class="artists">
+  <% @artists.each do |artist| %>
+  <h5><%=link_to artist.name, artist_path(artist) %></h5>
+  <% end %>
 
 <br />
 <br />
 
-<%=link_to "Add New Artist", new_artist_path, class: "btn" %>
-<%=link_to "Back", charts_path, class: "btn" %> 
+  <%=link_to "Add New Artist", new_artist_path, class: "btn" %>
+</div>
+<br />
+  <%=link_to "Back", charts_path, class: "btn" %> 
+
+</div>
