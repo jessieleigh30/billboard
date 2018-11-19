@@ -45,10 +45,8 @@ def set_chart
   @chart = Chart.find(params[:id])
 end
 
-  def chart_params
-    params.require(:chart).permit(:name)
-  end
-
+#put in chart params and test
+  
 
 end
 

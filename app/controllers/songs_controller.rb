@@ -14,8 +14,7 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new
-    render partial: "form"
+   @song = Song.new
   end
 
   def create
@@ -28,7 +27,7 @@ class SongsController < ApplicationController
   end
 
   def edit
-    render partial: "form"
+    render :new
   end
 
   def update
@@ -37,6 +36,10 @@ class SongsController < ApplicationController
     else 
       render :edit
     end
+
+    def destroy
+      @song.destroy
+      redirect_to board_songs_path
   end 
 
 protected
@@ -50,6 +53,11 @@ protected
  end
 
     private
+    def set
+
+    def set_song
+      @song = Song.find(params[:id])
+    end
 
     def set_artist
       @artist = Artist.find(params[:artist_id])

@@ -1,3 +1,5 @@
+<div class="artist_container">
+
 <h1>Songs by <%= @artist.name %></h1>
 <% @songs.each do |song| %>
   <h6><%= song.title %></h6>
@@ -5,4 +7,7 @@
 
 <br />
 <br />
+<%=link_to "Add New Song", new_artist_song_path(@artist), class:"btn" %>
+<br />
 <%=link_to "Back", charts_path, class:"btn" %>
+</div>

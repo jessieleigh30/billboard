@@ -1,6 +1,8 @@
+<div class ="songs-container">
+
 <h1> Add New Song </h2>
 
-<%= form_for @song do |f| %>
+<%= form_for @songs do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, required:true, autofocus: true %>
   <br />
@@ -12,3 +14,4 @@
   <%= f.submit %>
 
 <% end %> 
+</div>

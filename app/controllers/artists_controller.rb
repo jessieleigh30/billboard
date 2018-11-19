@@ -41,8 +41,13 @@ class ArtistsController < ApplicationController
     redirect_to artist_path
   end
   private
+
   def set_artist
     @artist = Artist.find(params[:id])
   end
-end
 
+  def artist_params 
+    params.require(:artist).permit(:name)
+  
+end
+end
