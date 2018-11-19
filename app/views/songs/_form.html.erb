@@ -1,6 +1,5 @@
-<h1> Add New Song </h2>
 
-<%= form_for [@chart, @song do |f| %>
+<%= form_with(model: chart, local: true, class: "form") do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, required:true, autofocus: true %>
   <br />
